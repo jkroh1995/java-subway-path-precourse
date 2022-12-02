@@ -1,4 +1,4 @@
-package subway.domain;
+package subway.domain.station;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -23,4 +23,11 @@ public class StationRepository {
     public static void deleteAll() {
         stations.clear();
     }
+
+    public void makeStations(){
+        for (Stations station : Stations.values()) {
+            StationRepository.addStation(new Station(station.getStation()));
+        }
+    }
+
 }
