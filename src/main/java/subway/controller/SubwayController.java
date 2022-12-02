@@ -8,6 +8,7 @@ import subway.view.OutputView;
 
 public class SubwayController {
 
+    private static final String OPERATE = "1";
     private final Scanner scanner;
 
     InputHandler inputHandler = new InputHandler();
@@ -23,7 +24,7 @@ public class SubwayController {
     public void run(){
         outputView.printMain();
         String function = inputHandler.getFunction(scanner);
-        if(function.equals("1")){
+        if(function.equals(OPERATE)){
             pathController.operate(scanner, stationList);
             run();
         }
